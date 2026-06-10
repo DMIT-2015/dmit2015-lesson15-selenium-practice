@@ -19,26 +19,26 @@ import org.omnifaces.util.Messages;
  */
 @Named("seleniumPracticeView")
 @ViewScoped // Survives postbacks (including AJAX) on this view; Serializable required
-public class SeleniumPracticeViewView implements Serializable {
+public class SeleniumPracticeView implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private static final Logger LOG = Logger.getLogger(SeleniumPracticeViewView.class.getName());
+    private static final Logger LOG = Logger.getLogger(SeleniumPracticeView.class.getName());
 
     @Getter @Setter
     private String searchTerm;
 
     @Getter @Setter
-    private String searchMode;
+    private String searchMode = "Contains";
 
     @Getter @Setter
-    private String inStockOnly;
+    private boolean inStockOnly;
 
     @Getter @Setter
     private String resultText;
 
     @Getter @Setter
-    private String submitted;
+    private boolean submitted;
 
     @PostConstruct // Runs after @Inject fields are initialized (once per view instance)
     public void init() {
@@ -49,16 +49,25 @@ public class SeleniumPracticeViewView implements Serializable {
 
     public void onSubmit() {
         try {
-            // TODO: handle action (e.g., call a service, update state, etc.)
-            // Messages.addGlobalInfo("Saved.");
+            submitted = true;
+            resultText = String.format(
+                    "Search request: searchTerm=%s, searchMode=%s, inStockOnly=%s",
+                    searchTerm,
+                    searchMode,
+                    inStockOnly
+            );
         } catch (Exception ex) {
             handleException(ex, "Unable to process your request.");
         }
     }
 
     public void onClear() {
-        // Reset view state
-        // selectedSeleniumPracticeView = null;
+        searchTerm = null;
+        searchMode = null;
+        submitted = false;
+        inStockOnly = false;
+        searchMode = "contains";
+        resultText = null;
     }
 
     /**
