@@ -18,6 +18,27 @@ selenium-practice.xhtml
 
 ---
 
+## How to Use This Repository
+
+This repository is a public starter project for the Lesson 15 Functional UI Testing with Selenium WebDriver practice activity.
+
+Do **not** clone the original repository directly unless you only want a read-only copy. If you clone the original repository, you will not be able to push your changes back to GitHub.
+
+Use the following workflow:
+
+1. Click **Fork** on the GitHub repository page.
+2. Create the fork under your own GitHub account.
+3. Clone **your fork** into IntelliJ IDEA.
+4. Complete the TaskManager JPA practice activity.
+5. Commit and push your changes to **your fork**.
+6. Use what you learned to complete Assignment 4 in your separate Assignment 4 GitHub Classroom repository.
+
+Important:
+
+- This practice repository is **not** your Assignment 4 submission.
+- Assignment 4 must be completed in your separate GitHub Classroom Assignment 4 repository.
+- Do not submit your Lesson 15 practice fork for Assignment 4.
+
 ## Learning Outcomes
 
 By the end of this practice activity, you should be able to:
