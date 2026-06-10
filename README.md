@@ -75,7 +75,7 @@ Make sure:
 Example local URL:
 
 ```text
-http://localhost:8080/dmit2015-lesson15-selenium-practice/selenium-practice.xhtml
+http://localhost:8080/selenium-practice.xhtml
 ```
 
 Your actual URL may be different depending on your project name and server configuration.
