@@ -433,38 +433,28 @@ assertThat(message.getText()).contains("Search term is required");
 
 ### Goal
 
-Verify that the Clear button resets the form.
+Verify that the Clear button resets the main form input.
 
 ### Tasks
 
 Write a test that:
 
 1. Opens `selenium-practice.xhtml`.
-2. Enters the search term:
-
-```text
-monitor
-```
-
+2. Enters the search term `monitor`.
 3. Selects a search mode.
-4. Checks "Only show stores with stock".
+4. Optionally checks "Only show stores with stock".
 5. Clicks Submit.
-6. Verifies that the result panel appears.
+6. Verifies that a result is displayed.
 7. Clicks Clear.
 8. Verifies that the search term field is empty.
 
-### Hint
+### Optional Extension
 
-To check the current value of an input field:
+Also verify one or more of the following:
 
-```java
-String fieldValue = searchTermField.getAttribute("value");
-assertThat(fieldValue).isBlank();
-```
-
-You may also verify that the result panel is cleared or no longer displayed.
-
----
+- the selected search mode resets to the default value
+- the checkbox is unchecked
+- the result panel is cleared or no longer displayed
 
 # Optional Challenge - Apply Selenium to Your Own Assignment 3 Page
 
@@ -493,7 +483,7 @@ class SeleniumPracticeSeleniumIT {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    private final String baseUrl = "http://localhost:8080/dmit2015-lesson15-selenium-practice";
+    private final String baseUrl = "http://localhost:8080;
 
     @BeforeEach
     void setUp() {
